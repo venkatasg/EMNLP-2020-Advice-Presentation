@@ -1,0 +1,41 @@
+\begin{frame}[c]\frametitle{Results}
+\centering
+\begin{figure}
+    \begin{tikzpicture}
+        \begin{axis}[
+            mbarplot,
+            cycle list name=mbarplot cycle,
+            width  = \columnwidth,
+            height = 0.9\textheight,
+            major x tick style = transparent,
+            ybar=\pgflinewidth,
+            bar width=11pt,
+            ymajorgrids = true,
+            ylabel = {F1},
+            ylabel style={rotate=-90},
+            symbolic x coords={SEMEVAL, NTUA-IS, BERT\textsubscript{sent}, BERT\textsubscript{sent+c}, BERT\textsubscript{sent+q}},
+            xtick = data,
+            tick label style={/pgf/number format/assume math mode=true},
+            scaled y ticks = false,
+            enlarge x limits=0.2,
+            ymin=0,
+            ymax=100,
+            legend cell align=left,
+            legend style={
+                    at={(0.9,0.99)},
+                    anchor=north,
+                    text=fgcolor,
+                    font=\small
+            }
+        ]
+
+        \addplot+[fill opacity=1,visible on=<2->, style={postaction={pattern=crosshatch dots}}]
+                coordinates {(SEMEVAL, 57.2) (NTUA-IS, 53.5) (BERT\textsubscript{sent}, 77.8) (BERT\textsubscript{sent+c}, 77.6) (BERT\textsubscript{sent+q}, 72.5)};
+        \addplot+[fill opacity=1,visible on=<3->]
+                coordinates {(SEMEVAL, 44.6) (NTUA-IS, 42.3) (BERT\textsubscript{sent}, 51.9) (BERT\textsubscript{sent+c}, 51.9) (BERT\textsubscript{sent+q}, 37.4)};
+        \legend{r/needadvice, r/AskParents}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{\onslide<2->{BERT\textsubscript{sent} has best performance.\\}\onslide<3->{Performance on r/AskParents worse than r/needadvice}}
+\end{figure}
+\end{frame}

@@ -1,0 +1,14 @@
+*.xdv
+/presentation.toc
+/presentation.snm
+/presentation.run.xml
+/presentation.out
+/presentation.nav
+/presentation.log
+/presentation.fls
+/presentation.fdb_latexmk
+/presentation.blg
+/presentation.bcf
+/presentation.bbl
+/presentation.aux
+/.DS_Store

@@ -1,0 +1,106 @@
+\documentclass[light, handout]{presentation}
+
+\pdfauthor{Venkat}
+\pdftitle{EMNLP 2020 Presentation}
+
+\usepackage{multirow}
+\usepackage{pgf-pie}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{appendixnumberbeamer}
+
+\graphicspath{{figures/}}
+\captionsetup{labelformat=empty}
+\addbibresource{references.bib}
+
+% To do overlay stuff in tikz and loading tikz patterns
+\usetikzlibrary{patterns}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+% Title stuff
+\title{Help! Need Advice on Identifying Advice}
+\subtitle{\sansc EMNLP 2020}
+\date{}
+\author{\small Venkata S Govindarajan$^1$, Benjamin T Chen$^2$,
+        Rebecca Warholic$^3$, \\
+        Katrin Erk$^1$, Junyi Jessy Li$^1$}
+\institute{$^1$ The University of Texas at Austin\\
+           $^2$ Amazon Inc.\\
+           $^3$ McGill University}
+
+
+\begin{document}
+
+\maketitle
+
+{
+\metroset{sectionpage=none}
+\section{Motivation}
+\input{slides/01-introduction.tex}
+}
+
+{
+\metroset{sectionpage=none}
+\section{Related Work}
+\input{slides/02-background.tex}
+}
+
+{
+\section{Annotation Protocol and Dataset}
+\input{slides/03-protocol.tex}
+}
+
+{
+\metroset{sectionpage=none}
+\section{Preliminary Analysis}
+\input{slides/04-preliminaryanalysis.tex}
+}
+
+{
+\section{Modeling}
+\input{slides/05-models.tex}
+}
+
+{
+\metroset{sectionpage=none}
+\section{Results}
+\input{slides/06-results.tex}
+}
+
+{
+\metroset{sectionpage=none}
+\section{Analysis}
+\input{slides/07-analysis.tex}
+}
+
+{
+\metroset{sectionpage=none}
+\section{Conclusion}
+\input{slides/08-conclusion.tex}
+}
+
+{
+\metroset{numbering=none}
+\section*{references}
+\begin{frame}[allowframebreaks, noframenumbering]{References}
+\printbibliography[heading=none]
+\end{frame}
+}
+
+%Backup slides go here
+\makeatletter
+\renewcommand{\ExLBr}{\nfbc}
+\renewcommand{\ExRBr}{\nfbc}
+\makeatother
+
+\appendix
+\input{slides/99-appendix.tex}
+
+
+\end{document}

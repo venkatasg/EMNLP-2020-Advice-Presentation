@@ -1,0 +1,19 @@
+\begin{tabular}{cllll}
+	\toprule
+    & \textbf{Model} & \textbf{P} & \textbf{R} & \textbf{F1} \\
+    \midrule
+    {\multirow{6}{*}{\rotatebox{90}{\tiny r/AskParents}}} & SEMEVAL & 32.7 & 70.2 & 44.6 \\
+    & NTUA-IS & 31.4 & 64.9 & 42.3 \\
+    & BERT$_{\text{noft}}$ & 62.6 (1.2) & 14.9 (1.0) & 24.0 (1.4) \\
+    & BERT$_{\text{sent}}$ & 54.9 (2.4) & 49.5 (4.4) & \textbf{51.9} (1.9) \\
+    & BERT$_{\text{sent+c}}$ & 54.2 (2.1) & 49.9 (4.0) & 51.9 (2.2) \\
+    & BERT$_{\text{sent+q}}$ & 61.0 (13.4) & 33.1 (11.9) & 37.4 (8.1) \\
+   \midrule
+   {\multirow{6}{*}{\rotatebox{90}{\tiny r/needadvice}}} & SEMEVAL & 44.5 & 80.3 & 57.2 \\
+    & NTUA-IS & 43.0 & 70.9 & 53.5 \\
+    & BERT$_{\text{noft}}$ & 82.9 (0.5) & 44.6 (1.4) & 58.0 (1.2) \\
+    & BERT$_{\text{sent}}$ & 79.7 (3.8) & 76.3 (3.9) & \textbf{77.8} (0.3) \\
+    & BERT$_{\text{sent+c}}$ & 80.4 (4.4) & 75.3 (4.4) & 77.6 (0.7) \\
+    & BERT$_{\text{sent+q}}$ & 83.4 (4.8) & 64.7 (7.4) & 72.5 (3.5) \\
+    \bottomrule
+\end{tabular}

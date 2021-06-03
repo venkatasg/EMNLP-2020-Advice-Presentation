@@ -1,0 +1,89 @@
+\begin{frame}[c]\frametitle{Advice Strategies}
+
+\pause
+
+\ex. \a.\label{ex:pers-1} I did the classic Ferberizing: check on baby after 5 mins,then 10 mins,then 20 mins, etc, until asleep. \only<3->{\alert{{\sansc personal narrative}}}\\
+     \b.\label{ex:pers-2} Have you tried a calm spray? \only<4->{\alert{{\sansc questions}}}\\
+     \b. \label{ex:pers-3} Figure out why they like them , and then recommend those ones\\for those reasons. \only<5->{\alert{{\sansc imperatives}}}\\
+     \b. \label{ex:pers-4} If he doesn’t want therapy, maybe an antidepressant would \\help. \only<6->{\alert{{\sansc conditionals}}}\\
+
+\vfill
+
+\pause
+
+\onslide<7->{To study personal narratives further, we (the authors) analyzed 213 sentences DS-labelled as advice for whether they contained personal narratives.}
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Personal Narratives}
+
+\begin{figure}
+\begin{tikzpicture}
+   \begin{axis}[
+       mbarplot,
+       cycle list name=mbarplot cycle,
+       width  = \columnwidth,
+       height = 0.9\textheight,
+       major x tick style = transparent,
+       ybar=\pgflinewidth,
+       bar width=15pt,
+       ymajorgrids = true,
+       ylabel style={rotate=-90, align=left},
+       ylabel=\% of\\sents,
+       symbolic x coords={r/AskParents, r/needadvice},
+       xtick = data,
+       tick label style={/pgf/number format/assume math mode=true},
+       scaled y ticks = false,
+       enlarge x limits=0.5,
+       ymin=0,
+       ymax=30,
+       legend cell align=left,
+       legend style={
+               at={(0.95,1.03)},
+               anchor=north,
+               text=fgcolor,
+               font=\small
+       }
+   ]
+    \addplot+
+           coordinates {(r/AskParents, 16.4) (r/needadvice, 6.33)};
+   \end{axis}
+\end{tikzpicture}
+\caption{Y Axis shows \% of sentences that were judged to contain personal narratives.}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}[c]\frametitle{Non-advice}
+    \pause
+    \centering
+    \begin{figure}
+    \begin{tikzpicture}
+    \pie[/tikz/nodes={text=white},text=inside, color={TolDarkPurple!70, TolDarkRed!70}]{32.3/Advice Sentences, 67.8/Non-Advice Sentences}
+    \end{tikzpicture}
+    \caption{Proportion of advice and non-advice in our dataset}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Non-advice}
+
+\ex. \a.\label{ex:nona-1}\textellipsis being fully prepared for an interview calmed me down \textellipsis \textbf<2->{ Good luck on your interviews and fingers crossed. } \only<2->{\alert{{\sansc sentiment}}}\\
+     \b.\label{ex:nona-2}  Look for smaller outfits, they’re more likely to be willing to give you some time. \textbf<3->{Most professionals - if they have the time - are more than happy to talk to a student about what they do\textellipsis} \only<3->{\alert{{\sansc support}}}\\
+     \b. \label{ex:nona-3} \textbf<4->{Yes, no one will ever know the big answers to the big questions.} What is the only thing that if shared , will grow larger in size? Answer: Love. Let that define your actions in life. \only<4->{\alert{{\sansc reasoning}}}\\
+
+\end{frame}
+
+\begin{frame}\frametitle{Lexical Analysis}
+
+    \pause
+
+    \begin{table}[t]
+        \centering
+        \small
+        \input{tables/logodds}
+        \caption{Top 30 lemmas ranked by log-odds ratio}
+        \label{tab:logodds}
+    \end{table}
+\end{frame}
+

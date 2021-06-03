@@ -1,0 +1,43 @@
+\begin{frame}[c]\frametitle{Performance on Personal Narratives}
+\centering
+\begin{figure}
+\begin{tikzpicture}
+   \begin{axis}[
+       mbarplot,
+       cycle list name=mbarplot cycle,
+       width  = \columnwidth,
+       height = 0.9\textheight,
+       major x tick style = transparent,
+       ybar=\pgflinewidth,
+       bar width=15pt,
+       ytick={0,20,...,100},
+       tickwidth=0pt,
+       ymajorgrids=true,
+       ylabel = {F1},
+       ylabel style={rotate=-90},
+       symbolic x coords={AskParents, needadvice},
+       xtick = data,
+       tick label style={/pgf/number format/assume math mode=true},
+       scaled y ticks = false,
+       enlarge x limits=0.75,
+       ymin=0,
+       ymax=100,
+       legend cell align=left,
+       legend style={
+               at={(0.9,0.99)},
+               anchor=north,
+               text=fgcolor,
+               font=\small
+       }
+   ]
+   \addplot+[fill opacity=1,visible on=<2->]
+           coordinates {(AskParents, 51.9) (needadvice, 77.8)};
+   \addplot+[fill opacity=1,visible on=<3->,style={postaction={pattern=crosshatch dots}}]
+           coordinates {(AskParents, 32.2) (needadvice, 45.9)};
+
+   \legend{{\sansc test set\hphantom{}}, {\sansc personal}}
+   \end{axis}
+\end{tikzpicture}
+\caption{\onslide<3->{BERT\textsubscript{sent} performance on personal narrative sentences in test set suffers.}}
+\end{figure}
+\end{frame}

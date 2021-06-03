@@ -1,0 +1,220 @@
+\begin{frame}[standout]
+
+{\huge \normalfont \sansc appendix}
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Gold Annotator Agreement}
+
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+      mbarplot,
+      cycle list name=mbarplot cycle,
+      width  = \columnwidth,
+      height = 0.98\textheight,
+      major x tick style = transparent,
+      ybar=\pgflinewidth,
+      bar width=15pt,
+      ymajorgrids = true,
+      ylabel = {Cohen's Kappa},
+      symbolic x coords={r/AskParents, r/needadvice},
+      xtick = data,
+      tick label style={/pgf/number format/assume math mode=true},
+      scaled y ticks = false,
+      enlarge x limits=0.5,
+      ymin=0,
+      ymax=1,
+      legend cell align=left,
+      legend style={
+              at={(0.9,0.99)},
+              anchor=north,
+              text=fgcolor,
+             font=\normalsize
+      }
+  ]
+   \addplot+
+          coordinates {(r/AskParents, 0.620) (r/needadvice, 0.669)};
+   \addplot+[style={postaction={pattern=crosshatch dots}}]
+          coordinates {(r/AskParents, 0.680) (r/needadvice, 0.681)};
+   \legend{$\kappa_{maj}$, $\kappa_{DS}$}
+  \end{axis}
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Average  Inter-Annotator Agreement}
+
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+      mbarplot,
+      cycle list name=mbarplot cycle,
+      width  = \columnwidth,
+      height = 0.98\textheight,
+      major x tick style = transparent,
+      ybar=\pgflinewidth,
+      bar width=15pt,
+      ymajorgrids = true,
+      ylabel = {Score},
+      symbolic x coords={r/AskParents, r/needadvice},
+      xtick = data,
+      tick label style={/pgf/number format/assume math mode=true},
+      scaled y ticks = false,
+      enlarge x limits=0.5,
+      ymin=0,
+      ymax=100,
+      legend cell align=left,
+      legend style={
+              at={(1.0,1.03)},
+              anchor=north,
+              text=fgcolor,
+              font=\small
+      }
+  ]
+  \addplot+
+          coordinates {(r/AskParents, 83.71) (r/needadvice, 85.99)};
+   \addplot+
+          coordinates {(r/AskParents, 76.86) (r/needadvice, 85.71)};
+   \addplot+
+          coordinates {(r/AskParents, 79.62) (r/needadvice, 79.99)};
+   \addplot+
+          coordinates {(r/AskParents, 73.14) (r/needadvice, 79.55)};
+   \legend{Accuracy, Precision, Recall, F1}
+  \end{axis}
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Lexical Analysis}
+
+We quantify how strongly individual lemmas are associated with advice versus non-advice text using the log-odds ratio \citep{nye-nenkova-2015-identification}.
+
+\vspace{5mm}
+
+\begin{equation}
+Odds(w,c) = \frac{P(w|c)}{1-P(w|c)}
+\end{equation}
+
+\begin{equation}
+\text{log-odds ratio} = \frac{Odds(w,advice)}{Odds(w,non-advice))}
+\end{equation}
+
+\end{frame}
+
+\begin{frame}[c]\frametitle{Generalizability Results}
+\centering
+\begin{tikzpicture}
+  \begin{axis}[
+      mbarplot,
+      cycle list name=mbarplot cycle,
+      width  = \columnwidth,
+      height = 0.98\textheight,
+      major x tick style = transparent,
+      ybar=\pgflinewidth,
+      bar width=15pt,
+      ymajorgrids = true,
+      ylabel = {F1},
+      ylabel style={rotate=-90},
+      symbolic x coords={r/AskParents, r/needadvice},
+      xtick = data,
+      tick label style={/pgf/number format/assume math mode=true},
+      scaled y ticks = false,
+      enlarge x limits=0.5,
+      ymin=0,
+      ymax=100,
+      legend cell align=left,
+      legend style={
+              at={(0.9,0.99)},
+              anchor=north,
+              text=fgcolor,
+              font=\small
+      }
+  ]
+  \addplot+
+          coordinates {(r/AskParents, 50.5) (r/needadvice, 77.8)};
+   \addplot+[style={postaction={pattern=crosshatch dots}}]
+          coordinates {(r/AskParents, 48.1) (r/needadvice, 76.0)};
+   \legend{{\sansc normal\hphantom{er}}, {\sansc transfer}}
+  \end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Dataset Metrics}
+    \begin{table}[H]
+        \centering
+        \input{tables/dataset-sents}
+        \caption{Sentence metrics in our dataset, with fraction DS-labeled as advice.}
+        \label{tab:dataset-metrics}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Gold Internal Agreement}
+    \begin{table}[H]
+        \centering
+        \input{tables/dataset-internal}
+        \caption{Gold annotator agreement on the internal task.}
+        \label{tab:internal-agreement}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Agreement}
+    \begin{table}[H]
+        \centering
+        \input{tables/dataset-agreement}
+        \caption{Average inter-annotator agreement for all workers against DS labels}
+        \label{tab:agreement}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Discourse Modes}
+    \begin{table}[H]
+        \centering
+        \input{tables/preliminary-analysis-modes}
+        \caption{Modes of discourse for advice sentences in each flair/subreddit}
+        \label{tab:disc-modes}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Results-Classification}
+    \begin{table}[H]
+        \centering
+        \input{tables/results-classification-test}
+        \caption{Classification results on test set.}
+        \label{tab:results-class}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Results-Generalization}
+    \begin{table}[H]
+        \centering
+        \input{tables/results-transfer-test}
+        \caption{Generalizbility results on test set.}
+        \label{tab:results-gen}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Results-Flair}
+    \begin{table}[H]
+        \centering
+        \input{tables/results-flair}
+        \caption{Flair results on test set.}
+        \label{tab:results-flair}
+    \end{table}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Attention}
+   \begin{figure}
+       \centering
+       \includegraphics[width=0.75\linewidth]{figures/att-2.png}
+       \caption{Attention weights visualized using BertViz~\citep{vig2019transformervis}}
+   \end{figure}
+\end{frame}
+
+\begin{frame}[c]\frametitle{Attention}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\linewidth]{figures/att-1.png}
+        \caption{Attention weights visualized using BertViz~\citep{vig2019transformervis}}
+    \end{figure}
+\end{frame}

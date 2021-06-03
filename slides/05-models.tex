@@ -1,0 +1,25 @@
+\begin{frame}[c]\frametitle{Models}
+
+We model advice identification as a \textbf{binary classification task}.
+
+\pause
+
+\begin{description}[Language Modelling]\itemsep10pt
+    \item[Rule-based] SEMEVAL 2019 baseline \& NTUA-IS 2019\citep{potamias-etal-2019-ntua}.
+
+    Match and score against \alert{words}, \alert{phrases}, \alert{regexs}:\\ \textit{suggest}, \textit{recommend}, \textit{.*would\textbackslash slike.*if.*}
+
+    \pause
+
+    \item[Language Models] We use \alert{BERT} \citep{devlin_bert:_2019} and experiment with input:
+    \begin{description}[Architectures]\itemsep10pt
+        \item[BERT\textsubscript{sent\hphantom{qc}}] {\sansc [cls] sentence [sep]}
+        \item[BERT\textsubscript{sent+q}] {\sansc [cls] sentence [sep] question}
+        \item[BERT\textsubscript{sent+c}] {\sansc [cls] sentence [sep] context}
+    \end{description}
+
+\end{description}
+
+
+\end{frame}
+
